@@ -2855,7 +2855,7 @@ class MDTimePicker(BaseDialogPicker):
         else:
             self._time_input.pos = time_input_pos
 
-        self._time_input.disabled = False if orientation == "input" else True
+        self._time_input.disabled = not orientation == "input"
         self._time_input.size = (
             [dp(216), dp(62)] if orientation == "input" else [dp(216), dp(72)]
         )
