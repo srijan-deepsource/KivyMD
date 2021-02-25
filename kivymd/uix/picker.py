@@ -1720,7 +1720,7 @@ class MDDatePicker(BaseDialogPicker):
 
     def update_calendar(self, year, month):
         try:
-            dates = [x for x in self.calendar.itermonthdates(year, month)]
+            dates = list(self.calendar.itermonthdates(year, month))
         except ValueError as e:
             if str(e) == "year is out of range":
                 pass
